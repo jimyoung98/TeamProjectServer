@@ -5,7 +5,7 @@ import { config } from '../config.js';
 
 export async function signup(req, res) {
 
-    const { ui_userid, ui_password, ui_checkPw ui_name, ui_email, ui_address, ui_hp } = req.body;
+    const { ui_userid, ui_password, ui_checkPw , ui_name, ui_email, ui_address, ui_hp } = req.body;
     const found = await userRepository.findByUserid(ui_userid);
     if (found) {
         return res.status(409).json({ message: `${ui_userid}은 이미 가입되었습니다` });
